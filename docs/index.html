@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luna Token ICO Sale</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+  </head>
+  <body>
+
+    <div class="container" style="width: 850px;">
+      <div class="row">
+        <div class="col-lg-12"></div>
+        <h1 class="text-center">LUNA TOKEN ICO SALE</h1>
+        <hr/>
+        <br/>
+      </div>
+      <div id="loader">
+        <p class="text-center">Loading...</p>
+      </div>
+      <div id="content" class="text-center" style="display: none;">
+        <p>
+          Welcome to the "Luna Token" (LUNA) ICO Sale! <br>
+          Token price is <span class="token-price"></span> Ether.
+          You currently have <span class="luna-balance"></span>&nbsp;LUNA.
+        </p>
+        <br/>
+        <img src="luna_the_cat.jpg" alt="Luna the Crypto Cat" style="width:300px;height:400px;">
+        <p></p>
+        <hr>
+        <p> Buy now LUNA, the ERC20 Token created by "Luna" the Crypto Cat!</p>
+        <p> <b>Important: To buy tokens first you must connect to the Ropsten test network using Metamask browser extension</b> </p>
+        <form onSubmit="App.buyTokens(); return false;" role="form">
+          <div class="form-group">
+            <div class="input-group">
+              <input id="numberOfTokens"class="form-control input-lg" type="number" name="number" value="1" min="1" pattern
+              ="[0-9]">
+            </input>
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary btn-lg">Buy Tokens</button>
+            </span>
+        </div>
+      </form>
+        <br>
+
+        <div class="progress">
+          <div id="progress" class="progress-bar progress-bar-striped active" aria-valuemin="0"
+          aria-valuemax="100">
+          </div>
+        </div>
+        <p>
+          <span class="tokens-sold"></span> / <span class="tokens-available"></span> tokens sold
+        </p>
+        <p id="accountAddress"></p>
+      </div>
+    </div>
+
+    <hr>
+    <p align="center"> <u><b>FAQ</b></u> <br> </p>
+    <p>
+      -¿Who is Luna the Crypto Cat? <br> Luna is a super cute cat who loves crypto and decided to create it's own ERC20 token on the Ethereum Network<br> <br>
+      - ¿What is Luna Token (LUNA)? <br> LUNA is an ERC20 Token created on Ropsten's test network.
+      It can only be purchased in round numbers and has a total supply of 1,000,000 tokens, which will be sold via this Initial Coin Offering (ICO) <br> <br>
+      - ¿How can i buy Luna Tokens? <br> First make sure that you are connected to the Ropsten test network using the Metamask browser extension, then select how many tokens would you like to buy and click the "Buy Tokens" button, a Metamask window will appear to confirm your transaction <br> <br>
+      - ¿Where can i download Metamask? <br> You can download Metamask here: <a href="https://metamask.io/">https://metamask.io/</a> <br> <br>
+
+    </p>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+  <footer>
+    <p align="center">Click <a href="https://github.com/fidellarosa/Luna-Token">here</a> to see Luna Token Github repository</p>
+    <p align="center"> <i>Created by Fidel La Rosa</i></p>
+  </footer>
+</html>
