@@ -7,22 +7,6 @@ App = {
   tokensSold: 0,
   tokensAvailable: 750000,
 
-  initMetaMask: function() {
-
-      async function enableUser() {
-          const accounts = await ethereum.enable();
-          const account = accounts[0];
-          App.account = account;
-      }
-      enableUser();
-  },
-  const ethereumButton = document.querySelector('.enableEthereumButton');
-
-ethereumButton.addEventListener('click', () => {
-  //Will Start the metamask extension
-  ethereum.request({ method: 'eth_requestAccounts' });
-});,
-
   init: function() {
     console.log("App initialized...")
     return App.initWeb3();
@@ -154,7 +138,6 @@ ethereumButton.addEventListener('click', () => {
 }
 $(function() {
   $(window).load(function() {
-    App.initMetaMask();
     App.init();
   })
 });
