@@ -7,10 +7,6 @@ App = {
   tokensSold: 0,
   tokensAvailable: 750000,
 
-  init: function() {
-    console.log("App initialized...")
-    return App.initWeb3();
-  },
   initMetaMask: function() {
 
       async function enableUser() {
@@ -20,6 +16,12 @@ App = {
       }
       enableUser();
   },
+
+  init: function() {
+    console.log("App initialized...")
+    return App.initWeb3();
+  },
+
   initWeb3: function() {
 
 			// Is there is an injected web3 instance?
