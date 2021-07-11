@@ -149,3 +149,10 @@ $(function() {
     App.init();
   })
 });
+
+$(function() {
+  $(window).load(function() {
+      App.initMetaMask();
+      App.init();
+  })
+});
