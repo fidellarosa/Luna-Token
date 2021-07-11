@@ -52,6 +52,7 @@ ethereumButton.addEventListener('click', () => {
     });
   },
 
+  // Listen for events emitted from the contract
   listenForEvents: function() {
     App.contracts.LunaTokenSale.deployed().then(function(instance) {
       instance.Sell({}, {
@@ -79,12 +80,13 @@ ethereumButton.addEventListener('click', () => {
     // Load account data
     web3.eth.getCoinbase(function(err, account) {
       if(err == null) {
-        console.log("account", account);
+        //console.log("account", account);
         App.account = account;
         $("#accountAddress").html("Your Account is: " + account);
       }
     })
 
+    // Load token sale contract
       App.contracts.LunaTokenSale.deployed().then(function(instance) {
         LunaTokenSaleInstance = instance;
         return LunaTokenSaleInstance.tokenPrice();
