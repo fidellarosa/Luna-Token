@@ -146,13 +146,7 @@ App = {
 }
 $(function() {
   $(window).load(function() {
+    App.initMetaMask();
     App.init();
-  })
-});
-
-$(function() {
-  $(window).load(function() {
-      App.initMetaMask();
-      App.init();
   })
 });
