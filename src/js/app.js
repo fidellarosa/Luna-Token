@@ -13,18 +13,30 @@ App = {
   },
 
   initWeb3: function() {
-    if(typeof web3 !== "undefined") {
-      // If a web3 instance is already provided by meta mask
-      App.web3Provider = web3.currentProvider;
-      web3 = new Web3(web3.currentProvider);
-    } else {
-      // specify default intance if no web3 instance provided
-      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-      web3 = new Web3(App.web3Provider);
-    }
 
-    return App.initContracts();
-  },
+			// Is there is an injected web3 instance?
+
+			if (typeof web3 !== 'undefined') {
+
+			ethereum.enable().then(() => {
+			web3 = new Web3(web3.currentProvider);
+
+			});
+
+			} else {
+
+			// If no injected web3 instance is detected, fallback to the TestRPC
+
+			web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+			}
+
+			App.web3Provider=web3.currentProvider;
+
+			App.populateAddress();
+
+			return App.initContract();
+
+			},
 
   initContracts: function() {
     $.getJSON("LunaTokenSale.json", function(LunaTokenSale) {
