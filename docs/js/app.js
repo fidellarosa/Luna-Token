@@ -6,12 +6,13 @@ App = {
   tokenPrice: 1000000000000000,
   tokensSold: 0,
   tokensAvailable: 750000,
-  /*const ethereumButton = document.querySelector('.enableEthereumButton');
+
+  const ethereumButton = document.querySelector('.enableEthereumButton');
 
 ethereumButton.addEventListener('click', () => {
   //Will Start the metamask extension
   ethereum.request({ method: 'eth_requestAccounts' });
-});,*/
+});,
 
   init: function() {
     console.log("App initialized...")
