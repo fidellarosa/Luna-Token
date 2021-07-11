@@ -7,19 +7,6 @@ App = {
   tokensSold: 0,
   tokensAvailable: 750000,
 
-  const ethereumButton = document.querySelector('.enableEthereumButton');
-const showAccount = document.querySelector('.showAccount');
-
-ethereumButton.addEventListener('click', () => {
-  getAccount();
-});
-
-async function getAccount() {
-  const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-  const account = accounts[0];
-  showAccount.innerHTML = account;
-},
-
   init: function() {
     console.log("App initialized...")
     return App.initWeb3();
