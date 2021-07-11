@@ -7,6 +7,16 @@ App = {
   tokensSold: 0,
   tokensAvailable: 750000,
 
+  initMetaMask: function() {
+
+    async function enableUser() {
+        const accounts = await ethereum.enable();
+        const account = accounts[0];
+        App.account = account;
+    }
+    enableUser();
+},
+
   init: function() {
     console.log("App initialized...")
     return App.initWeb3();
@@ -126,6 +136,7 @@ App = {
 }
 $(function() {
   $(window).load(function() {
+    App.initMetaMask();
     App.init();
   })
 });
